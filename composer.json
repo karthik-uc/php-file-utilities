@@ -1,0 +1,26 @@
+{
+    "name": "karthik-uc/php-file-utilities",
+    "description": "Contains CSV and JSON file manipulation code",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Karthik Bhat K.",
+            "email": "karthikb@unicourt.com",
+            "role": "Developer"
+        }
+    ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "*",
+        "phpunit/phpunit": "7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "FileUtils\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FileUtilsTest\\": "test/"
+        }
+    }
+}
