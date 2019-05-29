@@ -1,5 +1,7 @@
 <?php
 
+namespace FileUtils;
+
 class Csv
 {
     public static function loadIterator($filename, $hasHeaders = false)

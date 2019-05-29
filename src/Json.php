@@ -1,5 +1,7 @@
 <?php
 
+namespace FileUtils;
+
 class Json
 {
     public static function load(string $filename, bool $returnIsArray = false)
