@@ -46,6 +46,10 @@ class DataFormatter
     public static function formatDataType(array $data, array $typeMap): array
     {
         foreach ($typeMap as $fieldName => $datatype) {
+            if (!isset($data[$fieldName])) {
+                continue;
+            }
+
             $value = $data[$fieldName];
 
             if (is_null($value)) {
