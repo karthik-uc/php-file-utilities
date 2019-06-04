@@ -11,6 +11,11 @@ class DataFormatter
         return $d->format('Y-m-d');
     }
 
+    private static function toBoolean($data)
+    {
+        return (bool)$data;
+    }
+
     private static function toStandardDateTime($dateString)
     {
         $d = new \DateTime($dateString);
@@ -62,6 +67,9 @@ class DataFormatter
                     break;
                 case 'datetime':
                     $data[$fieldName] = self::toStandardDateTime($value);
+                    break;
+                case 'bool':
+                    $data[$fieldName] = self::toBoolean($value);
                     break;
                 default:
                     $data[$fieldName] = self::toString($value);
