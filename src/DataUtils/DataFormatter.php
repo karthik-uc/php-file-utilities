@@ -19,7 +19,7 @@ class DataFormatter
 
     private static function toISODateTime($dateString)
     {
-        $d = new DateTime($dateString);
+        $d = new \DateTime($dateString);
         return $d->format(DATE_RFC3339_EXTENDED);
     }
 
@@ -42,6 +42,11 @@ class DataFormatter
     {
         foreach ($typeMap as $fieldName => $datatype) {
             $value = $data[$fieldName];
+
+            if (is_null($value)) {
+                continue;
+            }
+
             switch ($datatype) {
                 case 'float':
                     $data[$fieldName] = self::toFloat($value);
