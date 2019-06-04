@@ -15,12 +15,14 @@
     },
     "autoload": {
         "psr-4": {
-            "FileUtils\\": "src/"
+            "FileUtils\\": "src/FileUtils/",
+            "DataUtils\\": "src/DataUtils/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FileUtilsTest\\": "test/"
+            "FileUtilsTest\\": "test/FileUtilsTest",
+            "DataUtilsTest\\": "src/DataUtilsTest/"
         }
     }
 }
