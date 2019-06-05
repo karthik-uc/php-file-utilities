@@ -4,6 +4,17 @@ namespace FileUtils;
 
 class Csv
 {
+    public static function toJson(string $filename, bool $hasHeaders = false, $jsonOptions = null)
+    {
+        return json_encode(self::load($filename, $hasHeaders), $jsonOptions);
+    }
+
+    public static function jsonDump(string $filename, string $outfile, bool $hasHeaders = false, $jsonOptions = null)
+    {
+        $data = self::toJson($filename, $hasHeaders, $jsonOptions);
+        file_put_contents($outfile, $data);
+    }
+
     public static function loadIterator($filename, $hasHeaders = false)
     {
         if (empty($filename)) {
